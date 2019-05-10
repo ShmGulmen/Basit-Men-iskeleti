@@ -1,0 +1,57 @@
+class Menu{
+    public static void displayMenu() {
+
+        System.out.println("1-)Add");
+        System.out.println("2-)Delete");
+        System.out.println("3-)Search");
+        System.out.println("4-)List");
+        System.out.println("5-)out");
+        System.out.println("6-)Option");
+    }
+
+        public static void Add()
+        {
+            System.out.println("add");
+        }
+        public static void Delete()
+        {
+            System.out.println("delete");
+        }
+        public static void Search()
+        {
+            System.out.println("search");
+        }
+        public static void list()
+        {
+            System.out.println("list");
+        }
+
+
+        public static void run()
+        {
+            Scanner kb = new Scanner(System.in);
+
+            EXIT_LOOP:
+            for (; ; ) {
+                displayMenu();
+                int val = Integer.parseInt(kb.nextLine());
+
+                switch (val){
+                    case 1:
+                        Add();
+                    case 2:
+                        Delete();
+                    case 3:
+                        Search();
+                    case 4:
+                        list();
+                    case 5:
+                        break EXIT_LOOP;
+                    case 6:
+                        displayMenu();
+                        default:
+                            System.out.println("invalid value");
+                }
+            }
+    }
+}
